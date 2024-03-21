@@ -1,0 +1,6 @@
+---
+- name: Alpine - Upgrade packages
+  community.general.apk:
+    upgrade: true
+    update_cache: true
+...
