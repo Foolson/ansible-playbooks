@@ -26,6 +26,7 @@
     api_host: '{{ proxmox_host }}'
     node: '{{ proxmox_node }}'
     hostname: '{{ inventory_hostname_short }}'
+    unprivileged: true
     state: started
   delegate_to: localhost
 ...
