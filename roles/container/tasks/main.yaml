@@ -13,6 +13,7 @@
     memory: '{{ proxmox_memory }}'
     swap: '{{ proxmox_memory }}'
     onboot: '{{ proxmox_onboot }}'
+    pubkey: '{{ proxmox_pubkey }}'
     unprivileged: true
     features:
       - nesting=1
