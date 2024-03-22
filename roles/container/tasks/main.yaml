@@ -17,7 +17,7 @@
     unprivileged: true
     features:
       - nesting=1
-    netif: '{"net0":"name=eth0,gw=172.16.0.1,ip={{ proxmox_ip }}/24,bridge=vmbr0"}'
+    netif: '{"net0":"name=eth0,gw={{ proxmox_gateway }},ip={{ proxmox_ip }}{{ proxmox_netmask }},bridge=vmbr0"}'
     state: present
   delegate_to: localhost
 - name: Start container
