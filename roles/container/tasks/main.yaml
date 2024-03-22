@@ -17,6 +17,5 @@
 #    cpuunits: 100
     netif: '{"net0":"name=eth0,gw=172.16.0.1,ip={{ proxmox_ip }}/24,bridge=vmbr0"}'
     state: present
-    update: true
   delegate_to: localhost
 ...
