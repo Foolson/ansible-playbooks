@@ -10,12 +10,13 @@
     ostemplate: '{{ proxmox_ostemplate }}'
     disk: '{{ proxmox_disk }}'
     cores: '{{ proxmox_cores }}'
-    cpus: 1
+#    cpus: 1
     memory: '{{ proxmox_memory }}'
     swap: '{{ proxmox_memory }}'
-    onboot: true
-    cpuunits: 100
+    onboot: '{{ proxmox_onboot }}'
+#    cpuunits: 100
     netif: '{"net0":"name=eth0,gw=172.16.0.1,ip={{ proxmox_ip }}/24,bridge=vmbr0"}'
     state: present
+    update: true
   delegate_to: localhost
 ...
