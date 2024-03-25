@@ -19,15 +19,7 @@
       - nesting=1
     netif: '{"net0":"name=eth0,gw={{ proxmox_gateway }},ip={{ proxmox_ip }}{{ proxmox_netmask }},bridge=vmbr0"}'
     state: present
-  delegate_to: localhost
-- name: Start container
-  community.general.proxmox:
-    api_user: '{{ proxmox_user }}'
-    api_password: '{{ proxmox_password }}'
-    api_host: '{{ proxmox_host }}'
-    node: '{{ proxmox_node }}'
-    hostname: '{{ inventory_hostname_short }}'
-    unprivileged: true
-    state: started
+  notify:
+    - Start container
   delegate_to: localhost
 ...
