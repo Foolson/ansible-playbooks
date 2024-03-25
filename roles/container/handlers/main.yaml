@@ -8,5 +8,9 @@
     hostname: '{{ inventory_hostname_short }}'
     unprivileged: true
     state: started
+  register: start_result
+  retries: 6
+  delay: 10
+  until: start_result is succeeded
   delegate_to: localhost
 ...
